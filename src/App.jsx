@@ -7,9 +7,9 @@ import Filtros from './components/Filtros/Filtros';
 
 function App() {
 
-    const [pageNumber, setPageNumber] = useState(4);
-    const [fetchedData, updateFetchedData] = useState([]);
-    const {info, results} = fetchedData; 
+    let [pageNumber, setPageNumber] = useState(4);
+    let [fetchedData, updateFetchedData] = useState([]);
+    let {info, results} = fetchedData; 
 
     
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
@@ -39,9 +39,7 @@ function App() {
           {/* Cards */}
           <div className="col-8"> 
               <div className="row">
-                <Cards />
-                <Cards />
-                <Cards />
+                <Cards results={results}/>
               </div>            
           </div>
           
