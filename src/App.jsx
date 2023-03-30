@@ -4,10 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Cards from './components/Cards/Cards';
 import Filtros from './components/Filtros/Filtros';
+import Pagination from './components/Pagination/Pagination';
 
 function App() {
 
-    let [pageNumber, setPageNumber] = useState(4);
+    let [pageNumber, setPageNumber] = useState(1);
+
+    console.log(pageNumber);
     let [fetchedData, updateFetchedData] = useState([]);
     let {info, results} = fetchedData; 
 
@@ -45,7 +48,12 @@ function App() {
           
         </div>
       </div>
+
+
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </div>
+
+
   )
 }
 
